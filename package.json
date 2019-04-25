@@ -1,0 +1,43 @@
+{
+  "name": "react2",
+  "version": "1.0.0",
+  "description": "react app",
+  "main": "no one",
+  "scripts": {
+    "test": "no one",
+    "wbserver": "NODE_ENV=production webpack --mode production --config ./wbserver.config.js",
+    "wbclient": "NODE_ENV=production webpack --mode production --config ./wbclient.config.js",
+    "wbclient-dev": "NODE_ENV=development webpack -w --mode development --config ./wbclient.config.js",
+    "nodemon": "nodemon --exec \"babel-node --inspect\" ./src/entryPoints/server.js",
+    "dev": "npm run wbclient-dev & npm run nodemon",
+    "build": "npm run wbclient && npm run wbserver",
+    "start": "node out/server/server.bundle.js"
+  },
+  "keywords": [
+    "react",
+    "redux"
+  ],
+  "author": "roggc",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^2.0.1",
+    "css-loader": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.6.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.2",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "webpack": "^4.30.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "devDependencies": {
+    "@babel/node": "^7.2.2",
+    "nodemon": "^1.18.11"
+  }
+}
