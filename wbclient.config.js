@@ -1,15 +1,16 @@
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin= require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
+
 module.exports =
 {
   entry:
   {
-    client: './src/entryPoints/client.js'
+    client: './src/entries/client.js'
   },
   output:
   {
@@ -62,18 +63,16 @@ module.exports =
   plugins:
   [
     new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin(
+      {
+        filename: './index.html',
+        template: './src/html/index.html'
+      }
+    ),
     new MiniCssExtractPlugin
     (
       {
         filename: './public/[name].[contenthash].css'
-      }
-    ),
-    new HtmlWebpackPlugin
-    (
-      {
-        hash: true,
-        template: './src/html/index.html',
-        filename: './public/index.html'
       }
     ),
     new webpack.HashedModuleIdsPlugin(),

@@ -8,7 +8,7 @@
     "wbserver": "NODE_ENV=production webpack --mode production --config ./wbserver.config.js",
     "wbclient": "NODE_ENV=production webpack --mode production --config ./wbclient.config.js",
     "wbclient-dev": "NODE_ENV=development webpack -w --mode development --config ./wbclient.config.js",
-    "nodemon": "nodemon --exec \"babel-node --inspect\" ./src/entryPoints/server.js",
+    "nodemon": "nodemon --exec \"babel-node --inspect\" ./src/entries/server.js",
     "dev": "npm run wbclient-dev & npm run nodemon",
     "build": "npm run wbclient && npm run wbserver",
     "start": "node out/server/server.bundle.js"
@@ -26,6 +26,7 @@
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.1.1",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.6.0",
     "react": "^16.8.6",
@@ -34,6 +35,7 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1",
     "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {

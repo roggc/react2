@@ -7,7 +7,7 @@ module.exports=
   externals: [nodeExternals()],
   entry:
   {
-    server: './src/entryPoints/server.js'
+    server: './src/entries/server.js'
   },
   output:
   {
